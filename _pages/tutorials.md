@@ -2,7 +2,7 @@
 layout: page
 title: tutorials
 permalink: /tutorials/
-description: Work in progress, for now projects are just templates!
+description: 
 nav: true
 ---
 

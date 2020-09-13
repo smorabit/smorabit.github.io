@@ -13,13 +13,14 @@ single-cell transcriptomics analysis. The following figure from Luecken & Theis 
 many of the analysis techniques that are commonly employed in my lab and by many
 others for single-cell transcriptomics analysis.
 
-<div class="img">
-    <img src="{{ site.baseurl }}/assets/img/tutorials/scRNA1/sc-overview.png" style='height: 100%; width: 100%; object-fit: contain'>
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/tutorials/scRNA1/sc-overview.png">
+    </div>
 </div>
-<div class="col three caption">
+<div class="caption">
   Overview of single-cell RNA-seq analysis in Luecken & Theis 2019
 </div>
-
 
 ## Seurat
 
@@ -147,10 +148,12 @@ dev.off()
 {% endhighlight %}
 </details>
 
-<div class="img">
-    <img src="{{ site.baseurl }}/assets/img/tutorials/scRNA1/basic_cells_per_sample.png" style='height: 100%; width: 100%; object-fit: contain'>
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/tutorials/scRNA1/basic_cells_per_sample.png">
+    </div>
 </div>
-<div class="col three caption">
+<div class="caption">
   Number of cells per sample before filtering
 </div>
 
@@ -188,10 +191,12 @@ dev.off()
 {% endhighlight %}
 </details>
 
-<div class="img">
-    <img src="{{ site.baseurl }}/assets/img/tutorials/scRNA1/basic_qc.png" style='height: 100%; width: 100%; object-fit: contain'>
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/tutorials/scRNA1/basic_qc.png">
+    </div>
 </div>
-<div class="col three caption">
+<div class="caption">
   Distributions of QC metrics in each sample
 </div>
 
@@ -244,17 +249,18 @@ dev.off()
 {% endhighlight %}
 </details>
 
-<div class="img">
-    <img src="{{ site.baseurl }}/assets/img/tutorials/scRNA1/basic_cells_per_sample_filtered.png" style='height: 100%; width: 100%; object-fit: contain'>
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/tutorials/scRNA1/basic_cells_per_sample_filtered.png">
+    </div>
 </div>
-<div class="col three caption">
+<div class="caption">
   Number of cells per sample post-filtering
 </div>
 
 Using these filters we removed `20,125` low-quality cells, retaining a total of
 `94,847` cells for downstream analysis. It looks like the paper actually has a
 more stringent QC cutoff, retaining a total of `66,311` nuclei.
-
 
 ### Normalization
 
@@ -313,13 +319,14 @@ dev.off()
 {% endhighlight %}
 </details>
 
-<div class="img">
-    <img src="{{ site.baseurl }}/assets/img/tutorials/scRNA1/basic_variable_features.png" style='height: 100%; width: 100%; object-fit: contain'>
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/tutorials/scRNA1/basic_variable_features.png">
+    </div>
 </div>
-<div class="col three caption">
+<div class="caption">
   Selection of highly variable genes
 </div>
-
 
 ### Linear Dimensionality Reduction
 
@@ -358,10 +365,12 @@ dev.off()
 {% endhighlight %}
 </details>
 
-<div class="img">
-    <img src="{{ site.baseurl }}/assets/img/tutorials/scRNA1/basic_pca_loadings.png" style='height: 100%; width: 100%; object-fit: contain'>
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/tutorials/scRNA1/basic_pca_loadings.png">
+    </div>
 </div>
-<div class="col three caption">
+<div class="caption">
   Number of cells per sample post-filtering
 </div>
 
@@ -381,13 +390,14 @@ dev.off()
 {% endhighlight %}
 </details>
 
-<div class="img">
-    <img src="{{ site.baseurl }}/assets/img/tutorials/scRNA1/basic_pca_scatter.png" style='height: 100%; width: 100%; object-fit: contain'>
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/tutorials/scRNA1/basic_pca_scatter.png">
+    </div>
 </div>
-<div class="col three caption">
+<div class="caption">
   Scatter plot of PC1 vs PC2 colored by sample ID
 </div>
-
 
 This scatter plot shows all `~90k` cells in PCA space. While there are some patterns
 that we can observe here, the cells do not form easily distinguishable clusters.
@@ -411,10 +421,12 @@ dev.off()
 {% endhighlight %}
 </details>
 
-<div class="img">
-    <img src="{{ site.baseurl }}/assets/img/tutorials/scRNA1/basic_pca_heatmap.png" style='height: 100%; width: 100%; object-fit: contain'>
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/tutorials/scRNA1/basic_pca_heatmap.png">
+    </div>
 </div>
-<div class="col three caption">
+<div class="caption">
   PCA heatmaps
 </div>
 
@@ -431,13 +443,14 @@ dev.off()
 {% endhighlight %}
 </details>
 
-<div class="img">
-    <img src="{{ site.baseurl }}/assets/img/tutorials/scRNA1/basic_pca_elbow.png" style='height: 100%; width: 100%; object-fit: contain'>
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/tutorials/scRNA1/basic_pca_elbow.png">
+    </div>
 </div>
-<div class="col three caption">
+<div class="caption">
   PCA elbow plot
 </div>
-
 
 Based on these plots we can decide how many PCs to retain for downstream analysis.
 Once again, there is not a one size fits all solution to determining the number of
@@ -516,12 +529,16 @@ dev.off()
 {% endhighlight %}
 </details>
 
-<div class="img">
-    <img src="{{ site.baseurl }}/assets/img/tutorials/scRNA1/basic_tsne_clusters.png" style='height: 100%; width: 100%; object-fit: contain'>
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/tutorials/scRNA1/basic_tsne_clusters.png">
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/tutorials/scRNA1/basic_umap_clusters.png">
+    </div>
 </div>
-
-<div class="img">
-    <img src="{{ site.baseurl }}/assets/img/tutorials/scRNA1/basic_umap_clusters.png" style='height: 100%; width: 100%; object-fit: contain'>
+<div class="caption">
+  Left: t-SNE, Right: UMAP
 </div>
 
 By coloring these plots by their cluster assignment, we can immediately see that
@@ -599,15 +616,16 @@ dev.off()
 {% endhighlight %}
 </details>
 
-<div class="img">
-    <img src="{{ site.baseurl }}/assets/img/tutorials/scRNA1/basic_canonical_marker_featurePlot.png" style='height: 100%; width: 100%; object-fit: contain'>
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/tutorials/scRNA1/basic_canonical_marker_featurePlot.png">
+    </div>
 </div>
-<div class="col three caption">
+<div class="caption">
   Feature plots of canonical marker genes. Yellow = high expression, Blue = low expression.
 </div>
 
 Next we can plot the distributions of these genes in each cluster.
-
 
 <details>
 <summary><b>toggle code</b></summary>
@@ -727,19 +745,20 @@ dev.off()
 {% endhighlight %}
 </details>
 
-<div class="img">
-    <img src="{{ site.baseurl }}/assets/img/tutorials/scRNA1/basic_umap_celltypes.png" style='height: 100%; width: 100%; object-fit: contain'>
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/tutorials/scRNA1/basic_umap_celltypes.png">
+    </div>
 </div>
 
-<div class="img">
-    <img src="{{ site.baseurl }}/assets/img/tutorials/scRNA1/basic_umap_celltype_clusters.png" style='height: 100%; width: 100%; object-fit: contain'>
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/tutorials/scRNA1/basic_umap_celltype_clusters.png">
+    </div>
 </div>
-
-
-### Compositional Analysis
-
-In this section we will go deeper into our cluster annotation by considering the
-composition of the dataset from a metadata perspective
+<div class="caption">
+  
+</div>
 
 ### Identifying cluster biomarkers
 

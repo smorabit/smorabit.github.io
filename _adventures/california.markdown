@@ -1,9 +1,9 @@
 ---
 layout: page
-title: Southern California
+title: California
 author: "[Sam Morabito](smorabit.github.io)"
 description:
-img: /assets/img/scripps_pier.jpg
+img: /assets/img/adventures/california/yellow_hills.jpg
 ---
 
 
