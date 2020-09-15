@@ -371,7 +371,7 @@ dev.off()
     </div>
 </div>
 <div class="caption">
-  Number of cells per sample post-filtering
+  Top genes in PCs 1-3
 </div>
 
 We can also visualize the data as a scatter plot showing each cell in PCA space.
@@ -757,10 +757,16 @@ dev.off()
     </div>
 </div>
 <div class="caption">
-  
+
 </div>
 
 ### Identifying cluster biomarkers
+
+In this section, we perform differential gene expression to find cluster marker
+genes. Marker genes are identified by iteratively comparing gene expression in each cluster to all other clusters. These comparisons can be done using a variety
+of statistical tests, such as logistic regression. Here we are using [MAST](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015-0844-5), a hurdle model specifically tailored to the nuances of scRNA-seq data.
+
+Seurat provides `FindAllMarkers`, a conventient function for iteratively performing these tests for each cluster. Alternatively, we could use the `FindMarkers` function to just compare two groups of cells. These functions have a lot of different options that effect the downstream results. Here I will use the default settings, which only look at genes that are up-regulated in the cluster of interest and show non-zero expression in at least 25% of cells in that clusters.
 
 <details open>
 <summary><b>toggle code</b></summary>
@@ -773,16 +779,94 @@ cluster_markers <- FindAllMarkers(
   logfc.threshold = 1.0,
   method='MAST'
 )
+cluster_markers$CellType_cluster <- paste0(unlist(cluster_annotations[cluster_markers$cluster]), '-', cluster_markers$cluster)
 write.csv(cluster_markers, file='data/cluster_markers.csv', quote=FALSE, row.names=FALSE)
 
 {% endhighlight %}
 </details>
 
+Now that we have perfomed these tests, we can create some plots that summarize the results. Below we plot the number of DEGs per cluster as a bar plot, and a
+heatmap of the top 3 DEGs per cluster.
 
+<details>
+<summary><b>toggle code</b></summary>
+{% highlight r %}
 
-# Scanpy
-```{python eval=FALSE}
+# plot the number of DEGs per cluster:
+df <- as.data.frame(rev(table(cluster_markers$CellType_cluster)))
+colnames(df) <- c('cluster', 'n_DEGs')
+
+# bar plot of the number of cells in each sample
+p <- ggplot(df, aes(y=n_DEGs, x=reorder(cluster, -n_DEGs), fill=cluster)) +
+  geom_bar(stat='identity') +
+  scale_y_continuous(expand = c(0,0)) +
+  NoLegend() + RotatedAxis() +
+  ylab(expression(italic(N)[DEGs])) + xlab('') +
+  theme(
+    panel.grid.minor=element_blank(),
+    panel.grid.major.y=element_line(colour="lightgray", size=0.5),
+  )
+
+png('figures/basic_DEGs_barplot.png', width=9, height=4, res=300, units='in')
+print(p)
+dev.off()
+
+# plot the top 3 DEGs per cluster as a heatmap:
+top_DEGs <- cluster_markers %>%
+  group_by(CellType_cluster) %>%
+  top_n(3, wt=avg_logFC) %>%
+  .$gene
+
+png('figures/basic_DEGs_heatmap.png', width=10, height=10, res=300, units='in')
+pdf('figures/basic_DEGs_heatmap.pdf', width=15, height=12, useDingbats=FALSE)
+DoHeatmap(seurat_obj, features=top_DEGs, group.by='seurat_clusters', label=FALSE) + scale_fill_gradientn(colors=viridis(256)) + NoLegend()
+dev.off()
+
+{% endhighlight %}
+</details>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/tutorials/scRNA1/basic_DEGs_barplot.png">
+    </div>
+</div>
+<div class="caption">
+  Number of DEGs per cluster
+</div>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/tutorials/scRNA1/basic_DEGs_heatmap.png">
+    </div>
+</div>
+<div class="caption">
+  Expression of top 3 DEGs per cluster. Yellow = high, Blue = low.
+</div>
+
+### Saving and loading Seurat objects
+
+This concludes the very basics of exploratory data analysis using Seurat. Finally, we will save the processed object so we can use it again later.
+
+<details open>
+<summary><b>toggle code</b></summary>
+{% highlight r %}
+
+# save seurat object
+saveRDS(seurat_obj, file='data/processed_seurat_object.rds')
+
+# load seurat object
+seurat_obj <- readRDS(ile='data/processed_seurat_object.rds')
+
+{% endhighlight %}
+</details>
+
+## Scanpy
+
+<details>
+<summary><b>toggle code</b></summary>
+{% highlight r %}
 
 import scanpy as sc
 
-```
+{% endhighlight %}
+</details>
