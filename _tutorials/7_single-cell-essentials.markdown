@@ -22,13 +22,7 @@ others for single-cell transcriptomics analysis.
   Overview of single-cell RNA-seq analysis in Luecken & Theis 2019
 </div>
 
-## Seurat
-
-The following section covers the absolute basics of single-cell analysis using
-the R package [Seurat](https://satijalab.org/seurat/). Most of this tutorial is
-inspired by [Seurat's clustering tutorial](https://satijalab.org/seurat/v3.2/seurat_obj3k_tutorial.html),
-however we will be using a dataset from the human brain since that is much more
-relevant to the lab's research. The following topics are covered here:
+The following topics are covered in this tutorial:
 
 * Load UMI counts matrix into R/Seurat.
 * Quality Control
@@ -37,6 +31,18 @@ relevant to the lab's research. The following topics are covered here:
 * Dimensionality Reduction
 * Clustering
 * Visualization
+
+This tutorial will go over how to perform exploratory analysis using Seurat and Scanpy,
+both of which are great tools for single-cell analysis. The primary difference between these two tools are that Seurat is in R, while Scanpy is in Python.
+
+
+## Seurat
+
+The following section covers the absolute basics of single-cell analysis using
+the R package [Seurat](https://satijalab.org/seurat/). Most of this tutorial is
+inspired by [Seurat's clustering tutorial](https://satijalab.org/seurat/v3.2/seurat_obj3k_tutorial.html),
+however we will be using a dataset from the human brain since that is much more
+relevant to the lab's research. 
 
 ### Loading data into Seurat
 In many cases, we work with single-cell data generated from the 10X Genomics platform.
