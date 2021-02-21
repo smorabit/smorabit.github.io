@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>Sam  Morabito | Dissecting UMAP visualizations</title>
+<meta name="description" content="Neuroinformatician
+">
+
+<!-- Bootstrap & MDB -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" integrity="sha512-RO38pBRxYH3SoOprtPTD86JFOclM51/XTIdEPh5j8sj4tp8jmQIx26twG52UaLi//hQldfrh7e51WzP9wuP32Q==" crossorigin="anonymous" />
+
+<!-- mathjax support -->
+
+
+
+<!-- Fonts & Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"  integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+<!-- Styles -->
+<link rel="shortcut icon" href="/assets/img/favicon.ico">
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<link rel="canonical" href="/blog/2020/umap/">
+
+<!-- Open Graph -->
+
+
+  </head>
+
+  <body class="fixed-top-nav ">
+
+    <!-- Header -->
+
+    <header>
+
+    <!-- Nav Bar -->
+    <nav id="navbar" class="navbar navbar-light bg-white navbar-expand-sm fixed-top">
+    <div class="container">
+      
+      <a class="navbar-brand title font-weight-lighter" href="/">
+       <span class="font-weight-bold">Sam</span>   Morabito
+      </a>
+      
+      <!-- Navbar Toogle -->
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          <!-- About -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/">
+              about
+              
+            </a>
+          </li>
+          
+          <!-- Blog -->
+          <li class="nav-item active">
+            <a class="nav-link" href="/blog/">
+              blog
+              
+            </a>
+          </li>
+          
+          <!-- Other pages -->
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/adventures/">
+                adventures
+                
+              </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/projects/">
+                projects
+                
+              </a>
+          </li>
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/publications/">
+                publications
+                
+              </a>
+          </li>
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/tutorials/">
+                tutorials
+                
+              </a>
+          </li>
+          
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</header>
+
+
+    <!-- Content -->
+
+    <div class="container mt-5">
+      
+
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Dissecting UMAP visualizations</h1>
+    <p class="post-meta">August 9, 2020</p>
+  </header>
+
+  <article class="post-content">
+    <p>In this blog post I aim to showcase the Uniform Manifold Approximation and Projection (UMAP) algorithm from a practical standpoint by experimenting with its various hyperparameters in a single cell RNA-seq (scRNA-seq) dataset of <code class="language-plaintext highlighter-rouge">3,000</code> cells uniformly sampled from a mouse brain dataset. UMAP is an <a href="https://en.wikipedia.org/wiki/Unsupervised_learning">unsupervised learning</a> algorithm for constructing low-dimensional manifolds in high-dimensional datasets, and is commonly applied for the purpose of data visualization. UMAP and other dimensionality reduction techniques help with interpretability of complex datasets. For example, in the case of scRNA-seq analysis, UMAP helps us understand the differences and similarities between different cells by reducing their transcriptomes from ~20k+ dimensions down to two dimensions that we can inspect visually. Scanpy offets a nice <a href="https://scanpy-tutorials.readthedocs.io/en/latest/pbmc3k.html">tutorial</a> for getting started with scRNA-seq analysis, including a dataset of peripheral mononuclear blood cells (PBMCs).</p>
+
+<p>In their 2018 <a href="https://arxiv.org/abs/1802.03426">arXiv paper</a>, McInnes &amp; Healy introduce UMAP and argue that it is competitive with t-distributed Stochastic Neighbor Embedding <a href="https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding">(t-SNE)</a> in terms of visualization quality while offering superior run time performance. Additionally, the authors argue that the global structure of the data is better preserved in UMAP compared to t-SNE.</p>
+
+<p>While UMAP can be used for general-purpose dimensionality reduction, in single-cell genomics field it is usually applied to data that has already been reduced using a linear transformation such as <a href="https://en.wikipedia.org/wiki/Principal_component_analysis">principal component analysis (PCA)</a>. UMAP has been integrated in almost every single-cell data analysis toolkit, including <a href="https://satijalab.org/seurat/">Seurat</a> and <a href="https://scanpy.readthedocs.io/en/stable/">Scanpy</a>.</p>
+
+<h3 id="what-does-a-umap-plot-look-like">What does a UMAP plot look like?</h3>
+
+<p>The following scatter plot shows the dataset of <code class="language-plaintext highlighter-rouge">3,000</code> cells and <code class="language-plaintext highlighter-rouge">19,998</code> genes that has been reduced to <code class="language-plaintext highlighter-rouge">3,000</code> cells (dots) and <code class="language-plaintext highlighter-rouge">2</code> UMAP dimensions, visualized in the plot below. Each cell is colored by cluster assignment from <a href="https://www.nature.com/articles/s41598-019-41695-z">Leiden clustering</a> on the PCA reduced dataset.</p>
+
+<div class="img">
+    <img src="/assets/img/umap/umap_default.png" style="height: 100%; width: 100%; object-fit: contain" />
+</div>
+<div class="caption">
+  UMAP with default parameters colored with Leiden clusters
+</div>
+
+<p>In practice, computing a UMAP with Scanpy is very easy, and you don’t necessarily need to think about hyperparameters at all. The following line of code constructed the above UMAP on the scRNA-seq dataset.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">sc</span><span class="p">.</span><span class="n">tl</span><span class="p">.</span><span class="n">umap</span><span class="p">(</span><span class="n">adata</span><span class="p">)</span></code></pre></figure>
+
+<p>In many cases it is okay to use UMAP’s default parameters, but if you are like me you may be curious what these default settings are and how they are influencing your interpretation of the data. For single-cell analysis, cells should group together in UMAP space based on cell type identity. Cell types must be carefully annotated by inspecting the distribution of gene expression values in literature curated lists of canonical cell type marker genes, and by using statistical tests to identify up- and down-regulated genes in each cell population. UMAP visualizations of these genes can be helpful to diagnose problematic data processing or erroneous cell type annotations.</p>
+
+<h3 id="playing-with-umap-hyperparameters">Playing with UMAP hyperparameters</h3>
+
+<p>Here I show the results of testing different values for seven different UMAP hyperparameters. The following hyperparameter descriptions are taken from the <a href="https://scanpy.readthedocs.io/en/stable/api/scanpy.tl.umap.html">Scanpy documentation</a>.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">n_neighbors</code>: A value between 2 and 100, representing the number of neighboring data points used for manifld approximation. Larger values give a manifold with a more global view of the dataset, while smaller values preserve more of the local structures.</li>
+  <li><code class="language-plaintext highlighter-rouge">min_dist</code>: The minimum distance between two points in the UMAP embedding.</li>
+  <li><code class="language-plaintext highlighter-rouge">spread</code>: A scaling factor for distance between embedded points.</li>
+  <li><code class="language-plaintext highlighter-rouge">gamma</code>: Weighting applied to negative samples in low dimensional embedding optimization.</li>
+  <li><code class="language-plaintext highlighter-rouge">alpha</code>: The initial learning rate for UMAP optimization.</li>
+  <li><code class="language-plaintext highlighter-rouge">maxiter</code>: The number of iterations for UMAP optimization.</li>
+  <li><code class="language-plaintext highlighter-rouge">negative_sample_rate</code>: The number of negative edge/1-simplex samples to use per positive edge/1-simplex sample in optimizing the low dimensional embedding.</li>
+</ul>
+
+<h3 id="test-1-n_neighbors">Test 1: <code class="language-plaintext highlighter-rouge">n_neighbors</code></h3>
+
+<div class="img">
+    <img src="/assets/img/umap/umap_neighbors_illustrator.png" style="height: 100%; width: 100%; object-fit: contain" />
+</div>
+<div class="col three caption">
+  Parameter sweep for min_dist and spread
+</div>
+
+<p>The resulting UMAPs look quite similar, but they do have some clear distinctions. As n_neighbors increases, the clusters are encroaching upon each other. Interestingly, the blue cluster on the left side of the UMAPs appears to be completely separated from the rest of the clusters only in the left-most UMAP. Larger values of min_dist may cause rare cell populations to get mixed into other cell types, since their spatial assignment would be more influenced by the global data landscape.</p>
+
+<h3 id="test-2-min_dist-and-spread">Test 2: <code class="language-plaintext highlighter-rouge">min_dist</code> and <code class="language-plaintext highlighter-rouge">spread</code></h3>
+
+<div class="img">
+    <img src="/assets/img/umap/umap_spread_dist_edit.png" style="height: 100%; width: 100%; object-fit: contain" />
+</div>
+<div class="col three caption">
+  Parameter sweep for min_dist and spread
+</div>
+
+<p>Here we can see that in general <code class="language-plaintext highlighter-rouge">min_dist</code> and <code class="language-plaintext highlighter-rouge">spread</code> influence the distance between points in the UMAP embedding, and that large values of <code class="language-plaintext highlighter-rouge">min_dist</code> results in the UMAP looking like a messy blob. In contrast, larger values of <code class="language-plaintext highlighter-rouge">spread</code> yield tighter clustering. In this dataset lower values of <code class="language-plaintext highlighter-rouge">min_dist</code> seem desirable in order to separate different cell populations in low dimensional space.</p>
+
+<h3 id="test-3-gamma-and-alpha">Test 3: <code class="language-plaintext highlighter-rouge">gamma</code> and <code class="language-plaintext highlighter-rouge">alpha</code></h3>
+
+<div class="img">
+    <img src="/assets/img/umap/umap_alpha_gamma_edit.png" style="height: 100%; width: 100%; object-fit: contain" />
+</div>
+<div class="col three caption">
+  Parameter sweep for gamma and alpha
+</div>
+
+<p><code class="language-plaintext highlighter-rouge">alpha</code> and <code class="language-plaintext highlighter-rouge">gamma</code> do not appear to have very much influence on the resulting UMAPs. Perhaps more extreme values need to be tested, or perhaps a larger dataset should be used.</p>
+
+<h3 id="test-4-maxiter-and-negative_sample_rate">Test 4: <code class="language-plaintext highlighter-rouge">maxiter</code> and <code class="language-plaintext highlighter-rouge">negative_sample_rate</code></h3>
+
+<div class="img">
+    <img src="/assets/img/umap/umap_sample_rate_edit.png" style="height: 100%; width: 100%; object-fit: contain" />
+</div>
+<div class="col three caption">
+  Parameter sweep negative sample rate and number of training epochs
+</div>
+
+<p>Similar to Test 3, <code class="language-plaintext highlighter-rouge">maxiter</code> and <code class="language-plaintext highlighter-rouge">negative_sample_rate</code> do not appear to have very much influence on the resulting UMAPs. This is helpful to know that it does not take a large amount of training iterations to achieve a decent UMAP.</p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>In most cases it seems like it is okay to carry on using the default UMAP hyperparameters. If anything should be changed to best suit a certain dataset, the parameters that are going to have the most influence on the output are n_neighbors, and spread/min_dist. Perhaps it would be more informative to test a wider range of values, and to use different sized datasets (future blog post maybe). Take note that different software packages may have slightly different default parameters for UMAP.</p>
+
+  </article>
+
+  
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      var disqus_shortname  = 'smorabit-github-io';
+      var disqus_identifier = '/blog/2020/umap';
+      var disqus_title      = "Dissecting UMAP visualizations";
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  
+
+</div>
+
+    </div>
+
+    <!-- Footer -->
+
+    
+<footer class="fixed-bottom">
+  <div class="container mt-0">
+    &copy; Copyright 2021 Sam  Morabito.
+    Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
+
+    
+  </div>
+</footer>
+
+
+
+  </body>
+
+  <!-- Load Core and Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha512-/DXTXr6nQodMUiq+IUJYCt2PPOUjrHJ9wFrqpJ3XkgPNOZVfMok7cRw6CSxyCQxXn6ozlESsSh1/sMCTF1rL/g==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js" integrity="sha512-eUQ9hGdLjBjY3F41CScH3UX+4JDSI9zXeroz7hJ+RteoCaY+GP/LDoM8AO+Pt+DRFw3nXqsjh9Zsts8hnYv8/A==" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"  integrity="sha512-Mug9KHKmroQFMLm93zGrjhibM2z2Obg9l6qFG2qKjXEXkMp/VDkI4uju9m4QKPjWSwQ6O2qzZEnJDEeCw0Blcw==" crossorigin="anonymous"></script>
+
+<!-- Load Common JS -->
+<script src="/assets/js/common.js"></script>
+
+<!-- Code Syntax Highlighting -->
+<link rel="stylesheet" href="https://gitcdn.link/repo/jwarby/jekyll-pygments-themes/master/github.css" />
+
+
+<!-- Load KaTeX -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+<script src="/assets/js/katex.js"></script>
+
+
+
+<!-- Load Mansory & imagesLoaded -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js" integrity="" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+
+<!-- Project Cards Layout -->
+<script type="text/javascript">
+  // Init Masonry
+  var $grid = $('.grid').masonry({
+    gutter: 10,
+    horizontalOrder: true,
+    itemSelector: '.grid-item',
+  });
+  // layout Masonry after each image loads
+  $grid.imagesLoaded().progress( function() {
+    $grid.masonry('layout');
+  });
+</script>
+
+
+
+
+
+
+
+</html>
