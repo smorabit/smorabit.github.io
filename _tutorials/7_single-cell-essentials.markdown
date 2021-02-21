@@ -1,6 +1,6 @@
 ---
 layout: page
-title: single-cell transcriptomics essentials part 1
+title: single-cell RNA-seq essentials
 author: "[Sam Morabito](smorabit.github.io)"
 description:
 img: /assets/img/nyan.gif
@@ -32,17 +32,13 @@ The following topics are covered in this tutorial:
 * Clustering
 * Visualization
 
-This tutorial will go over how to perform exploratory analysis using Seurat and Scanpy,
-both of which are great tools for single-cell analysis. The primary difference between these two tools are that Seurat is in R, while Scanpy is in Python.
-
-
 ## Seurat
 
 The following section covers the absolute basics of single-cell analysis using
 the R package [Seurat](https://satijalab.org/seurat/). Most of this tutorial is
 inspired by [Seurat's clustering tutorial](https://satijalab.org/seurat/v3.2/seurat_obj3k_tutorial.html),
 however we will be using a dataset from the human brain since that is much more
-relevant to the lab's research. 
+relevant to the lab's research.
 
 ### Loading data into Seurat
 In many cases, we work with single-cell data generated from the 10X Genomics platform.
@@ -862,17 +858,6 @@ saveRDS(seurat_obj, file='data/processed_seurat_object.rds')
 
 # load seurat object
 seurat_obj <- readRDS(ile='data/processed_seurat_object.rds')
-
-{% endhighlight %}
-</details>
-
-## Scanpy
-
-<details>
-<summary><b>toggle code</b></summary>
-{% highlight r %}
-
-import scanpy as sc
 
 {% endhighlight %}
 </details>
