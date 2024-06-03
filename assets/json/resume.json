@@ -2,13 +2,11 @@
   "basics": {
     "name": "Samuel Morabito",
     "image": "",
-    "email": "smorabit@uci.edu",
-    "summary": "Applying single-cell and spatial genomics technologies to understanding human diseases, like Alzheimer's Disease.",
+    "email": "sam.morabito@cnag.eu",
+    "summary": "Applying single-cell and spatial genomics technologies to study human diseases.",
     "location": {
-      "postalCode": "CA 92617",
-      "city": "Irvine",
-      "countryCode": "US",
-      "region": "California"
+      "city": "Barcelona",
+      "countryCode": "ES"
     },
     "profiles": [
       {
@@ -20,11 +18,19 @@
   },
   "work": [
     {
+      "name": "Centro Nacional de Análisis Genómico",
+      "position": "Postdoctoral Researcher",
+      "url": "https://www.cnag.eu/teams/genome-research-unit/single-cell-genomics-group",
+      "startDate": "2024-04",
+      "endDate": "pres",
+      "summary": ""
+    },
+    {
       "name": "Swarup Lab, University of California Irvine",
       "position": "Postdoctoral Researcher",
       "url": "https://swaruplab.bio.uci.edu",
       "startDate": "2024-01-17",
-      "endDate": "pres",
+      "endDate": "2024-04",
       "summary": ""
     },
     {
@@ -32,7 +38,7 @@
       "position": "Graduate Student Researcher",
       "url": "https://swaruplab.bio.uci.edu",
       "startDate": "2019",
-      "endDate": "2024"
+      "endDate": "2024-01"
     },
     {
       "name": "University of California San Diego",
@@ -57,8 +63,8 @@
       "url": "https://www.ucsd.edu/",
       "area": "Bioengineering: Bioinformatics",
       "studyType": "Bachelor of Science (BS)",
-      "startDate": "2017",
-      "endDate": "2013"
+      "startDate": "2013",
+      "endDate": "2017"
     }
   ],
   "awards": [

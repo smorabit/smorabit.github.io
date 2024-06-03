@@ -9,7 +9,7 @@ profile:
   image: sam_profpic.png
   image_circular: true # crops the image to make it circular
   more_info: >
-    <p> smorabit{at}uci.edu </p>
+    <p> sam.morabito{at}cnag.eu </p>
 
 news: true # includes a list of news items
 latest_posts: false # includes a list of the newest posts
@@ -17,6 +17,6 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-I am a Postdoctoral Researcher at the [University of California Irvine](https://uci.edu/) in the [Swarup Lab](https://swaruplab.bio.uci.edu/) where I work on expanding our understanding of human neurological diseases using high-dimensional genomics approaches like single-cell and spatial -omics. I recently earned my PhD in Mathematical, Computational and Systems Biology [(MCSB)](https://ccbs.uci.edu/education/mcsb/) at UC Irvine, and I am continuing my research career as a Computational Biology Postdoctoral Researcher at the [Centro Nacional de Análisis Genómico](https://www.cnag.eu/) in Barcelona starting in spring 2024.
+I am a Postdoctoral Researcher in the [Single Cell Genomics Group](https://www.cnag.eu/teams/genome-research-unit/single-cell-genomics-group) at the [Centro Nacional de Análisis Genómico](https://www.cnag.eu/) in Barcelona, Spain. My research focuses on applying single-cell and spatial -omics to human diseases, including neurodegenerative diseases and cancer. I also dabble in bioinformatics method development, such as the R package [hdWGCNA](https://smorabit.github.io/hdWGCNA/). I earned my PhD in Mathematical, Computational and Systems Biology [(MCSB)](https://ccbs.uci.edu/education/mcsb/) at the [University of California Irvine](https://uci.edu/) in lab of [Dr. Vivek Swarup](https://swaruplab.bio.uci.edu/) 
 
 Outside of the lab, my favorite things to do include making and drinking specialty coffee, playing with my cats Kiki and Junior, listening to music (mostly metal!), and gaming. 
