@@ -1,10 +1,9 @@
 ---
-layout: post
+layout: page
 nav_order: 3
 nav: true
 permalink: /photos/
 title: photos
-description: 
 ---
 
 This is an example post with image galleries.

@@ -11,7 +11,7 @@ description:
 footer_text: 
 keywords: 
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+icon: 🧬 # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://smorabit.github.io # the base hostname & protocol for your site
 baseurl:  # the subpath of your site, e.g. /blog/. Leave blank for root
@@ -193,6 +193,7 @@ exclude:
   - _pages/dropdown.md
   - _pages/projects.md
   - _pages/repositories.md
+  - _pages/photos.md
 
 keep_files:
   - CNAME
