@@ -1,12 +1,12 @@
 metadata:
-  last_updated: '2026-01-23'
+  last_updated: '2026-01-28'
 papers:
   PGn3zPwAAAAJ:0EnyYjriUFMC:
     citations: 53
     title: The ENCODE4 long-read RNA-seq collection reveals distinct classes of transcript structure diversity
     year: '2023'
   PGn3zPwAAAAJ:5nxA0vEk-isC:
-    citations: 600
+    citations: 605
     title: hdWGCNA identifies co-expression networks in high-dimensional transcriptomics data
     year: '2023'
   PGn3zPwAAAAJ:7PzlFSSx8tAC:
@@ -18,7 +18,7 @@ papers:
     title: Basic Science and Pathogenesis
     year: '2025'
   PGn3zPwAAAAJ:IjCSPb-OGe4C:
-    citations: 593
+    citations: 595
     title: "Single-nucleus chromatin accessibility and transcriptomic characterization of Alzheimer\u2019s disease"
     year: '2021'
   PGn3zPwAAAAJ:L8Ckcad2t8MC:
@@ -42,7 +42,7 @@ papers:
     title: Cortical diurnal rhythms remain intact with microglial depletion
     year: '2022'
   PGn3zPwAAAAJ:WF5omc3nYNoC:
-    citations: 243
+    citations: 245
     title: "Molecular signatures underlying neurofibrillary tangle susceptibility in Alzheimer\u2019s disease"
     year: '2022'
   PGn3zPwAAAAJ:YOwf2qJgpHMC:
@@ -50,7 +50,7 @@ papers:
     title: Investigating the molecular landscape of neurodegeneration with cellular and spatial genomics
     year: '2024'
   PGn3zPwAAAAJ:YsMSGLbcyi4C:
-    citations: 161
+    citations: 160
     title: "Absence of microglia promotes diverse pathologies and early lethality in Alzheimer\u2019s disease mice"
     year: '2022'
   PGn3zPwAAAAJ:Zph67rFs4hoC:
@@ -70,7 +70,7 @@ papers:
     title: Single-cell landscape in mammary epithelium reveals bipotent-like cells associated with breast cancer risk and outcome
     year: '2019'
   PGn3zPwAAAAJ:eQOLeE2rZwMC:
-    citations: 18
+    citations: 19
     title: Protocol for single-nucleus ATAC sequencing and bioinformatic analysis in frozen human brain tissue
     year: '2022'
   PGn3zPwAAAAJ:hqOjcs7Dif8C:
