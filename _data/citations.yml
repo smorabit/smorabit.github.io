@@ -1,12 +1,12 @@
 metadata:
-  last_updated: '2026-01-28'
+  last_updated: '2026-02-04'
 papers:
   PGn3zPwAAAAJ:0EnyYjriUFMC:
     citations: 53
     title: The ENCODE4 long-read RNA-seq collection reveals distinct classes of transcript structure diversity
     year: '2023'
   PGn3zPwAAAAJ:5nxA0vEk-isC:
-    citations: 605
+    citations: 612
     title: hdWGCNA identifies co-expression networks in high-dimensional transcriptomics data
     year: '2023'
   PGn3zPwAAAAJ:7PzlFSSx8tAC:
@@ -38,11 +38,11 @@ papers:
     title: Relapse to cocaine seeking is regulated by medial habenula NR4A2/NURR1 in mice
     year: '2024'
   PGn3zPwAAAAJ:W7OEmFMy1HYC:
-    citations: 41
+    citations: 42
     title: Cortical diurnal rhythms remain intact with microglial depletion
     year: '2022'
   PGn3zPwAAAAJ:WF5omc3nYNoC:
-    citations: 245
+    citations: 246
     title: "Molecular signatures underlying neurofibrillary tangle susceptibility in Alzheimer\u2019s disease"
     year: '2022'
   PGn3zPwAAAAJ:YOwf2qJgpHMC:
@@ -74,7 +74,7 @@ papers:
     title: Protocol for single-nucleus ATAC sequencing and bioinformatic analysis in frozen human brain tissue
     year: '2022'
   PGn3zPwAAAAJ:hqOjcs7Dif8C:
-    citations: 113
+    citations: 114
     title: 'The Type 2 Diabetes Knowledge Portal: An open access genetic resource dedicated to type 2 diabetes and related traits'
     year: '2023'
   PGn3zPwAAAAJ:mVmsd5A6BfQC:
