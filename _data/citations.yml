@@ -1,16 +1,16 @@
 metadata:
-  last_updated: '2026-02-13'
+  last_updated: '2026-02-20'
 papers:
   PGn3zPwAAAAJ:0EnyYjriUFMC:
-    citations: 56
+    citations: 57
     title: The ENCODE4 long-read RNA-seq collection reveals distinct classes of transcript structure diversity
     year: '2023'
   PGn3zPwAAAAJ:5nxA0vEk-isC:
-    citations: 622
+    citations: 636
     title: hdWGCNA identifies co-expression networks in high-dimensional transcriptomics data
     year: '2023'
   PGn3zPwAAAAJ:7PzlFSSx8tAC:
-    citations: 2
+    citations: 3
     title: "Single-nucleus multi-omics identifies shared and distinct pathways in Pick\u2019s and Alzheimer\u2019s disease"
     year: '2025'
   PGn3zPwAAAAJ:IWHjjKOFINEC:
@@ -18,7 +18,7 @@ papers:
     title: Basic Science and Pathogenesis
     year: '2025'
   PGn3zPwAAAAJ:IjCSPb-OGe4C:
-    citations: 599
+    citations: 605
     title: "Single-nucleus chromatin accessibility and transcriptomic characterization of Alzheimer\u2019s disease"
     year: '2021'
   PGn3zPwAAAAJ:L8Ckcad2t8MC:
@@ -27,10 +27,10 @@ papers:
     year: '2025'
   PGn3zPwAAAAJ:QIV2ME_5wuYC:
     citations: 2
-    title: 'Genetically determined Alzheimer''s disease research advances: The Down Syndrome & Autosomal Dominant Alzheimer''s Disease 2024 Conference'
+    title: 'Genetically determined Alzheimer''s disease research advances: the down syndrome & autosomal dominant Alzheimer''s Disease 2024 Conference'
     year: '2025'
   PGn3zPwAAAAJ:Tyk-4Ss8FVUC:
-    citations: 10
+    citations: 9
     title: Systems biology approaches to unravel the molecular and genetic architecture of Alzheimer's disease and related tauopathies
     year: '2021'
   PGn3zPwAAAAJ:ULOm3_A8WrAC:
@@ -42,7 +42,7 @@ papers:
     title: Cortical diurnal rhythms remain intact with microglial depletion
     year: '2022'
   PGn3zPwAAAAJ:WF5omc3nYNoC:
-    citations: 249
+    citations: 255
     title: "Molecular signatures underlying neurofibrillary tangle susceptibility in Alzheimer\u2019s disease"
     year: '2022'
   PGn3zPwAAAAJ:YOwf2qJgpHMC:
@@ -62,11 +62,11 @@ papers:
     title: The ENCODE mouse postnatal developmental time course identifies regulatory programs of cell types and cell states
     year: '2024'
   PGn3zPwAAAAJ:aqlVkmm33-oC:
-    citations: 71
+    citations: 72
     title: "Spatial and single-nucleus transcriptomic analysis of genetic and sporadic forms of Alzheimer\u2019s Disease"
     year: '2024'
   PGn3zPwAAAAJ:d1gkVwhDpl0C:
-    citations: 63
+    citations: 62
     title: Single-cell landscape in mammary epithelium reveals bipotent-like cells associated with breast cancer risk and outcome
     year: '2019'
   PGn3zPwAAAAJ:eQOLeE2rZwMC:
@@ -82,6 +82,6 @@ papers:
     title: Decoding the immune response in leptomeningeal disease through single-cell sequencing of cerebrospinal fluid
     year: '2025'
   PGn3zPwAAAAJ:qjMakFHDy7sC:
-    citations: 79
+    citations: 80
     title: "Integrative genomics approach identifies conserved transcriptomic networks in Alzheimer\u2019s disease"
     year: '2020'
