@@ -1,12 +1,12 @@
 metadata:
-  last_updated: '2026-02-27'
+  last_updated: '2026-03-06'
 papers:
   PGn3zPwAAAAJ:0EnyYjriUFMC:
-    citations: 57
+    citations: 58
     title: The ENCODE4 long-read RNA-seq collection reveals distinct classes of transcript structure diversity
     year: '2023'
   PGn3zPwAAAAJ:5nxA0vEk-isC:
-    citations: 652
+    citations: 654
     title: hdWGCNA identifies co-expression networks in high-dimensional transcriptomics data
     year: '2023'
   PGn3zPwAAAAJ:7PzlFSSx8tAC:
@@ -18,7 +18,7 @@ papers:
     title: Basic Science and Pathogenesis
     year: '2025'
   PGn3zPwAAAAJ:IjCSPb-OGe4C:
-    citations: 611
+    citations: 613
     title: "Single-nucleus chromatin accessibility and transcriptomic characterization of Alzheimer\u2019s disease"
     year: '2021'
   PGn3zPwAAAAJ:L8Ckcad2t8MC:
@@ -50,7 +50,7 @@ papers:
     title: Investigating the molecular landscape of neurodegeneration with cellular and spatial genomics
     year: '2024'
   PGn3zPwAAAAJ:YsMSGLbcyi4C:
-    citations: 166
+    citations: 168
     title: "Absence of microglia promotes diverse pathologies and early lethality in Alzheimer\u2019s disease mice"
     year: '2022'
   PGn3zPwAAAAJ:Zph67rFs4hoC:
@@ -62,11 +62,11 @@ papers:
     title: The ENCODE mouse postnatal developmental time course identifies regulatory programs of cell types and cell states
     year: '2024'
   PGn3zPwAAAAJ:aqlVkmm33-oC:
-    citations: 72
+    citations: 74
     title: "Spatial and single-nucleus transcriptomic analysis of genetic and sporadic forms of Alzheimer\u2019s Disease"
     year: '2024'
   PGn3zPwAAAAJ:d1gkVwhDpl0C:
-    citations: 62
+    citations: 63
     title: Single-cell landscape in mammary epithelium reveals bipotent-like cells associated with breast cancer risk and outcome
     year: '2019'
   PGn3zPwAAAAJ:eQOLeE2rZwMC:
@@ -74,7 +74,7 @@ papers:
     title: Protocol for single-nucleus ATAC sequencing and bioinformatic analysis in frozen human brain tissue
     year: '2022'
   PGn3zPwAAAAJ:hqOjcs7Dif8C:
-    citations: 115
+    citations: 117
     title: 'The Type 2 Diabetes Knowledge Portal: An open access genetic resource dedicated to type 2 diabetes and related traits'
     year: '2023'
   PGn3zPwAAAAJ:mVmsd5A6BfQC:
