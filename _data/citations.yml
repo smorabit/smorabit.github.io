@@ -1,20 +1,20 @@
 metadata:
-  last_updated: '2026-03-25'
+  last_updated: '2026-04-15'
 papers:
   PGn3zPwAAAAJ:0EnyYjriUFMC:
-    citations: 59
+    citations: 61
     title: The ENCODE4 long-read RNA-seq collection reveals distinct classes of transcript structure diversity
     year: '2023'
   PGn3zPwAAAAJ:5nxA0vEk-isC:
-    citations: 684
+    citations: 708
     title: hdWGCNA identifies co-expression networks in high-dimensional transcriptomics data
     year: '2023'
   PGn3zPwAAAAJ:7PzlFSSx8tAC:
-    citations: 3
+    citations: 4
     title: "Single-nucleus multi-omics identifies shared and distinct pathways in Pick\u2019s and Alzheimer\u2019s disease"
     year: '2025'
   PGn3zPwAAAAJ:IjCSPb-OGe4C:
-    citations: 624
+    citations: 640
     title: "Single-nucleus chromatin accessibility and transcriptomic characterization of Alzheimer\u2019s disease"
     year: '2021'
   PGn3zPwAAAAJ:L8Ckcad2t8MC:
@@ -22,7 +22,7 @@ papers:
     title: Dysregulation of transcription networks regulating oligodendrogenesis in age-related decline in CNS remyelination
     year: '2025'
   PGn3zPwAAAAJ:QIV2ME_5wuYC:
-    citations: 2
+    citations: 4
     title: 'Genetically determined Alzheimer''s disease research advances: the down syndrome & autosomal dominant Alzheimer''s Disease 2024 Conference'
     year: '2025'
   PGn3zPwAAAAJ:Tyk-4Ss8FVUC:
@@ -34,11 +34,11 @@ papers:
     title: Relapse to cocaine seeking is regulated by medial habenula NR4A2/NURR1 in mice
     year: '2024'
   PGn3zPwAAAAJ:W7OEmFMy1HYC:
-    citations: 43
+    citations: 44
     title: Cortical diurnal rhythms remain intact with microglial depletion
     year: '2022'
   PGn3zPwAAAAJ:WF5omc3nYNoC:
-    citations: 261
+    citations: 266
     title: "Molecular signatures underlying neurofibrillary tangle susceptibility in Alzheimer\u2019s disease"
     year: '2022'
   PGn3zPwAAAAJ:YOwf2qJgpHMC:
@@ -46,7 +46,7 @@ papers:
     title: Investigating the molecular landscape of neurodegeneration with cellular and spatial genomics
     year: '2024'
   PGn3zPwAAAAJ:YsMSGLbcyi4C:
-    citations: 170
+    citations: 175
     title: "Absence of microglia promotes diverse pathologies and early lethality in Alzheimer\u2019s disease mice"
     year: '2022'
   PGn3zPwAAAAJ:Zph67rFs4hoC:
@@ -58,19 +58,19 @@ papers:
     title: The ENCODE mouse postnatal developmental time course identifies regulatory programs of cell types and cell states
     year: '2024'
   PGn3zPwAAAAJ:aqlVkmm33-oC:
-    citations: 80
+    citations: 85
     title: "Spatial and single-nucleus transcriptomic analysis of genetic and sporadic forms of Alzheimer\u2019s Disease"
     year: '2024'
   PGn3zPwAAAAJ:d1gkVwhDpl0C:
-    citations: 63
+    citations: 64
     title: Single-cell landscape in mammary epithelium reveals bipotent-like cells associated with breast cancer risk and outcome
     year: '2019'
   PGn3zPwAAAAJ:eQOLeE2rZwMC:
-    citations: 22
+    citations: 23
     title: Protocol for single-nucleus ATAC sequencing and bioinformatic analysis in frozen human brain tissue
     year: '2022'
   PGn3zPwAAAAJ:hqOjcs7Dif8C:
-    citations: 125
+    citations: 128
     title: 'The Type 2 Diabetes Knowledge Portal: An open access genetic resource dedicated to type 2 diabetes and related traits'
     year: '2023'
   PGn3zPwAAAAJ:qUcmZB5y_30C:
