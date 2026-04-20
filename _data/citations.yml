@@ -1,12 +1,12 @@
 metadata:
-  last_updated: '2026-04-15'
+  last_updated: '2026-04-20'
 papers:
   PGn3zPwAAAAJ:0EnyYjriUFMC:
     citations: 61
     title: The ENCODE4 long-read RNA-seq collection reveals distinct classes of transcript structure diversity
     year: '2023'
   PGn3zPwAAAAJ:5nxA0vEk-isC:
-    citations: 708
+    citations: 719
     title: hdWGCNA identifies co-expression networks in high-dimensional transcriptomics data
     year: '2023'
   PGn3zPwAAAAJ:7PzlFSSx8tAC:
@@ -14,7 +14,7 @@ papers:
     title: "Single-nucleus multi-omics identifies shared and distinct pathways in Pick\u2019s and Alzheimer\u2019s disease"
     year: '2025'
   PGn3zPwAAAAJ:IjCSPb-OGe4C:
-    citations: 640
+    citations: 643
     title: "Single-nucleus chromatin accessibility and transcriptomic characterization of Alzheimer\u2019s disease"
     year: '2021'
   PGn3zPwAAAAJ:L8Ckcad2t8MC:
@@ -38,7 +38,7 @@ papers:
     title: Cortical diurnal rhythms remain intact with microglial depletion
     year: '2022'
   PGn3zPwAAAAJ:WF5omc3nYNoC:
-    citations: 266
+    citations: 268
     title: "Molecular signatures underlying neurofibrillary tangle susceptibility in Alzheimer\u2019s disease"
     year: '2022'
   PGn3zPwAAAAJ:YOwf2qJgpHMC:
@@ -70,7 +70,7 @@ papers:
     title: Protocol for single-nucleus ATAC sequencing and bioinformatic analysis in frozen human brain tissue
     year: '2022'
   PGn3zPwAAAAJ:hqOjcs7Dif8C:
-    citations: 128
+    citations: 129
     title: 'The Type 2 Diabetes Knowledge Portal: An open access genetic resource dedicated to type 2 diabetes and related traits'
     year: '2023'
   PGn3zPwAAAAJ:qUcmZB5y_30C:
